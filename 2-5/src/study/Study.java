@@ -1,8 +1,9 @@
 package study;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map.Entry;
 
 /**
  *
@@ -34,7 +35,7 @@ public class Study {
         /*
          * [ここへ記述]AllayListの中のshohinLinst1番目（0）の値のとき180を設定
          */
-        HashMap<String, Integer> shopMap = new HashMap<String, Integer>();
+        LinkedHashMap<String, Integer> shopMap = new LinkedHashMap<String, Integer>();
         shopMap.put(shohinList.get(0), 125);
         shopMap.put(shohinList.get(1), 180);
         shopMap.put(shohinList.get(2), 350);
@@ -42,8 +43,8 @@ public class Study {
 
         // ③ Wikiを参考に拡張for文を使って、課題の画像と同じ表示になるよう記述してください。
         // 「shohinList」と「shopMap」が保持する値を上手く利用しましょう。
-        for(Map.Entry<String, Integer> food : shopMap.entrySet()) {
-            System.out.println(food.getKey() + "=" + food.getValue() + "円になります！");
+        for(Entry<String, Integer> key : shopMap.entrySet()) {
+        	System.out.println(key.getKey() + "=" + key.getValue() + "円になります！");
         }
     }
 }
